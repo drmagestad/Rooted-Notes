@@ -4,7 +4,3 @@ Los presentes documentos describen el análisis y la explotación de varias máq
 
 Las técnicas aquí documentadas están orientadas al aprendizaje de conceptos de ciberseguridad ofensiva y defensiva.
 No se promueve el uso de estas técnicas en sistemas sin autorización explícita.
-
-
-# Rooted-Notes
-Repositorio personal de investigación y aprendizaje en ciberseguridad.  Contiene writeups estructurados, análisis de vulnerabilidades y documentación técnica orientada a la comprensión profunda de cada escenario.
