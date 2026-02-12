@@ -1,5 +1,5 @@
 <div align="center">
-⚠️ Disclaimer
+⚠️## Disclaimer
 </div>
 
 Los presentes documentos describen el análisis y la explotación de varias máquinas vulnerables proporcionadas por la plataformas de ciberseguridad, utilizadas con fines estrictamente educativos en un entorno controlado de laboratorio.
