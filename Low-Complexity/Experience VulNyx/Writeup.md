@@ -123,10 +123,14 @@ The Metasploit Framework will be used due to its extensive collection of preload
 The initial step in the exploitation process is to locate and prepare the MS08-067 module within the Metasploit Framework for configuration and execution.
 
 <p align="center">
-  <img src="Screenshots/9.png" width="1000">
+  <img src="Screenshots/9..png" width="800">
 </p>
 
+After locating the module, the configuration phase begins. For this proof of concept, only the RHOSTS parameter needs to be set in order to define the target IP address, while the remaining options are left with their default values.
 
+<p align="center">
+  <img src="Screenshots/10.png" width="800">
+</p>
 
 
 
