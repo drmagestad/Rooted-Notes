@@ -53,7 +53,7 @@ The scan identified an active host at:
 The MAC address prefix 08:00:27 is commonly associated with VirtualBox virtual machines, suggesting that the target system is running in a virtualized environment.
 
 <div align="center">
-  <img src="Screenshots/3.png" alt="Ping Result" width="700">
+  <img src="Screenshots/2.png" alt="Ping Result" width="600">
 </div>
 
 An ICMP echo request was sent to confirm host availability and network reachability.
@@ -63,7 +63,36 @@ This confirmed the presence of the target machine within the local network and p
 
 ## 🔎 Enumeration
 
-![02](Screenshots/2.png)
+After confirming that the target host was alive and reachable, a port scan was conducted using Nmap in order to identify exposed services and potential attack vectors.
+
+The scan included default NSE scripts to gather additional service information and perform basic vulnerability checks.
+
+<div align="center">
+  <img src="Screenshots/3.png" alt="Ping Result" width="900">
+</div>
+
+The results revealed ports 135 (MSRPC), 139 (NetBIOS), and 445 (SMB) open, indicating a Windows-based host exposing file-sharing services.
+
+Service fingerprinting pointed to Windows XP as the underlying operating system. The SMB configuration showed message signing disabled and failed SMBv2 negotiation, both consistent with an outdated and potentially vulnerable setup.
+
+![04](Screenshots/4.png)
+
+Although Nmap provided strong indicators about the operating system and SMB configuration, additional SMB enumeration was performed using netexec to validate these findings.
+
+![05](Screenshots/5.png)
+
+The results from netexec confirmed the system was running Windows 5.1 x32 (Windows XP), with SMBv1 enabled and SMB signing disabled. These findings align with the initial Nmap enumeration and provide a reliable understanding of the target’s SMB configuration.
+
+With the operating system and exposed services verified, the next phase involves assessing known vulnerabilities associated with this environment.
+
+
+
+
+
+
+
+
+
 
 
 
