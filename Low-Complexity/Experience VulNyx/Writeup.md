@@ -22,7 +22,7 @@ El impacto de esta vulnerabilidad es **Crítico**, permitiendo ejecución remota
 ## 🔎 Reconocimiento
 
 
-
+![Descripción de la imagen](Screenshots/1.png)
 
 
 
