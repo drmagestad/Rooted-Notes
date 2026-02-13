@@ -6,30 +6,22 @@
 
 ## ℹ️ Information
 
-The Experience machine exposes legacy SMB services on an unpatched Windows XP system, allowing remote code execution through the MS08-067 (CVE-2008-4250) vulnerability in the Windows Server service.
+The Experience machine exposes SMB services running on an unpatched Windows XP system. This configuration is vulnerable to MS08-067 (CVE-2008-4250), a critical remote code execution flaw in the Windows Server service (NetAPI).
 
-The vulnerable SMBv1 service enables a remote attacker to execute arbitrary code without prior authentication, completely compromising the integrity of the system.
+By sending a specially crafted RPC request over SMB port, an unauthenticated attacker can trigger a buffer overflow and execute arbitrary code with SYSTEM-level privileges. Successful exploitation results in full compromise of the target system, impacting confidentiality, integrity, and availability.
 
-From a real-world organizational perspective, this scenario represents:
-
-- Critical exposure of legacy infrastructure
-
-- Lack of patch management
-
-- Use of insecure protocols
-
-- High ransomware risk
-
-The impact of this vulnerability is Critical, allowing remote execution with elevated privileges.
+<div align="center">
 
 | Category | Details |
-|:--------:|:-------:|
+|:--------:|:------:|
 | Name | Experience |
 | Platform | VulNyx |
 | Difficulty | Easy |
 | Operating System | Windows XP |
-| Initial Attack Vector | SMBv1 – MS17-010 (EternalBlue) |
+| Initial Attack Vector | MS08-067 (CVE-2008-4250) |
 | Final Outcome | System Compromise |
+
+</div>
 
 ---
 
