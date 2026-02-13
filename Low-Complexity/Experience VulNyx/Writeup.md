@@ -50,7 +50,7 @@ The scan identified an active host at:
 
 - MAC Address: 08:00:27:1f:35:50
 
-The MAC address prefix 08:00:27 is commonly associated with VirtualBox virtual machines, suggesting that the target system is running in a virtualized environment.
+The MAC address prefix 08:00:27 is commonly associated with VirtualBox virtual machines. In this case, this aligns with the lab setup, as the vulnerable environment is intentionally virtualized for proof-of-concept (PoC) testing.
 
 <div align="center">
   <img src="Screenshots/2.png" alt="Ping Result" width="600">
@@ -63,7 +63,7 @@ This confirmed the presence of the target machine within the local network and p
 
 ## 🔎 Enumeration
 
-After confirming that the target host was alive and reachable, a port scan was conducted using Nmap in order to identify exposed services and potential attack vectors.
+After confirming that the target host was alive and reachable, a port scan was conducted using `Nmap` in order to identify exposed services and potential attack vectors.
 
 The scan included default NSE scripts to gather additional service information and perform basic vulnerability checks.
 
@@ -77,11 +77,11 @@ Service fingerprinting pointed to Windows XP as the underlying operating system.
 
 ![04](Screenshots/4.png)
 
-Although Nmap provided strong indicators about the operating system and SMB configuration, additional SMB enumeration was performed using netexec to validate these findings.
+Although `Nmap` provided strong indicators about the operating system and SMB configuration, additional SMB enumeration was performed using netexec to validate these findings.
 
 ![05](Screenshots/5.png)
 
-The results from netexec confirmed the system was running Windows 5.1 x32 (Windows XP), with SMBv1 enabled and SMB signing disabled. These findings align with the initial Nmap enumeration and provide a reliable understanding of the target’s SMB configuration.
+The results from `netexec` confirmed the system was running Windows 5.1 x32 (Windows XP), with SMBv1 enabled and SMB signing disabled. These findings align with the initial `Nmap` enumeration and provide a reliable understanding of the target’s SMB configuration.
 
 With the operating system and exposed services verified, the next phase involves assessing known vulnerabilities associated with this environment.
 
