@@ -158,11 +158,26 @@ Once the `RHOSTS` parameter is configured, the module is executed using the `run
 
 The module executed successfully, resulting in the establishment of a Meterpreter session. Using the `shell` command, an interactive command prompt was obtained on the target system, demonstrating full command execution capabilities.
 
+At this stage, full access to the system has been achieved. Further exploration of the file system can be performed to locate sensitive files, such as user.txt and root.txt, demonstrating the potential impact of a successful compromise.
 
+---
 
+## 🧾 Conclusion
 
+The exploitation of MS08-067 successfully demonstrated that the Windows XP system is critically vulnerable to remote code execution. By leveraging the Metasploit Framework, full system access was obtained without authentication, confirming the severity of the identified vulnerability.
 
+This assessment highlights the risks associated with legacy operating systems and outdated SMB configurations, particularly when security patches are not applied. The presence of exploitable services exposed over the network significantly increases the attack surface and enables complete system compromise.
 
+Proper patch management, disabling legacy protocols such as SMBv1, and restricting unnecessary network exposure are essential measures to prevent similar exploitation scenarios.
+
+---
+
+![Windows XP](https://img.shields.io/badge/OS-Windows%20XP-blue)
+![MS08-067](https://img.shields.io/badge/Vuln-MS08--067-red)
+![Metasploit](https://img.shields.io/badge/Tool-Metasploit-green)
+![Nmap](https://img.shields.io/badge/Tool-Nmap-yellow)
+![SMBv1](https://img.shields.io/badge/Protocol-SMBv1-orange)
+![RCE](https://img.shields.io/badge/Concept-RCE-lightgrey)
 
 
 
