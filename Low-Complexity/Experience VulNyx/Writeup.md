@@ -164,7 +164,7 @@ At this stage, full access to the system has been achieved. Further exploration 
 
 ## 🧾 Conclusion
 
-The exploitation of MS08-067 successfully demonstrated that the Windows XP system is critically vulnerable to remote code execution. By leveraging the Metasploit Framework, full system access was obtained without authentication, confirming the severity of the identified vulnerability.
+The exploitation of **MS08-067** successfully demonstrated that the Windows XP system is critically vulnerable to remote code execution. By leveraging the Metasploit Framework, full system access was obtained without authentication, confirming the severity of the identified vulnerability.
 
 This assessment highlights the risks associated with legacy operating systems and outdated SMB configurations, particularly when security patches are not applied. The presence of exploitable services exposed over the network significantly increases the attack surface and enables complete system compromise.
 
