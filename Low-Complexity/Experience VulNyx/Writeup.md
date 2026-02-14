@@ -40,6 +40,10 @@ The assessment was conducted following a structured approach, dividing the proce
 
 As an initial step, a local network discovery scan was performed using `arp-scan` to identify active hosts within the same subnet.
 
+```bash
+sudo arp-scan -I eth0 --localnet
+```
+
 ![01](Screenshots/1.png)
 
 This command sends ARP requests across the local network segment in order to detect live hosts responding at Layer 2. Unlike traditional ICMP-based discovery, ARP scanning is more reliable within local networks because it does not depend on firewall rules blocking ICMP traffic.
@@ -69,6 +73,10 @@ After confirming that the target host was alive and reachable, a port scan was c
 
 The scan included default NSE scripts to gather additional service information and perform basic vulnerability checks.
 
+```bash
+sudo nmap -p- -sS -sC -sV --min-rate 5000 -n -Pn TargetIP
+```
+
 <div align="center">
   <img src="Screenshots/3.png" alt="Ping Result" width="900">
 </div>
@@ -92,6 +100,10 @@ The results from `netexec` confirmed the system was running Windows 5.1 x32 (Win
 ## 🔬 Vulnerability Assessment
 
 With the operating system and SMB configuration verified, vulnerability-specific NSE scripts will be used to evaluate known vulnerabilities affecting the SMB service.
+
+```bash
+sudo nmap -p445 --script=vuln TargetIP
+```
 
 <p align="center">
   <img src="Screenshots/6.png" alt="06" width="700">
