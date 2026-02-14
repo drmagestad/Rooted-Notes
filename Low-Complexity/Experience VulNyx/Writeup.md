@@ -6,7 +6,7 @@
 
 ## ℹ️ Information
 
-The Experience machine exposes SMB services running on an unpatched Windows XP system. This configuration is vulnerable to MS08-067 (CVE-2008-4250), a critical remote code execution flaw in the Windows Server service (NetAPI).
+The Experience machine exposes SMB services running on an unpatched Windows XP system. This configuration is vulnerable to `MS08-067 (CVE-2008-4250)`, a critical remote code execution flaw in the Windows Server service (`NetAPI`).
 
 By sending a specially crafted RPC request over SMB port, an unauthenticated attacker can trigger a buffer overflow and execute arbitrary code with SYSTEM-level privileges. Successful exploitation results in full compromise of the target system, impacting confidentiality, integrity, and availability.
 
@@ -50,7 +50,7 @@ The scan identified an active host at:
 
 - MAC Address: 08:00:27:1f:35:50
 
-The MAC address prefix 08:00:27 is commonly associated with VirtualBox virtual machines. In this case, this aligns with the lab setup, as the vulnerable environment is intentionally virtualized for proof-of-concept (PoC) testing.
+The MAC address prefix `08:00:27` is commonly associated with VirtualBox virtual machines. In this case, this aligns with the lab setup, as the vulnerable environment is intentionally virtualized for proof-of-concept (PoC) testing.
 
 <div align="center">
   <img src="Screenshots/2.png" alt="Ping Result" width="600">
@@ -112,32 +112,37 @@ MS17-010 targets the SMBv1 protocol and was widely exploited in large-scale atta
 
 ## 💥 Exploitation
 
-In order to exploit the confirmed vulnerabilities in the Windows XP environment, MS08-067 was selected as the primary attack vector.
+In order to exploit the confirmed vulnerabilities in the Windows XP environment, `MS08-067` was selected as the primary attack vector.
 
-The Metasploit Framework will be used due to its extensive collection of preloaded modules and its flexibility for configuring target-specific parameters. The process will begin by locating the appropriate module, setting the necessary options, and then executing the exploit in a controlled and systematic manner to ensure precise results.
+The `Metasploit Framework` will be used due to its extensive collection of preloaded modules and its flexibility for configuring target-specific parameters. The process will begin by locating the appropriate module, setting the necessary options, and then executing the exploit in a controlled and systematic manner to ensure precise results.
 
 <p align="center">
   <img src="Screenshots/8.png" width="600">
 </p>
 
-The initial step in the exploitation process is to locate and prepare the MS08-067 module within the Metasploit Framework for configuration and execution.
+The initial step in the exploitation process is to locate and prepare the `MS08-067` module within the `Metasploit Framework` for configuration and execution.
 
 <p align="center">
   <img src="Screenshots/9..png" width="800">
 </p>
 
-After locating the module, the configuration phase begins. For this proof of concept, only the RHOSTS parameter needs to be set in order to define the target IP address, while the remaining options are left with their default values.
+After locating the module, the configuration phase begins. For this proof of concept, only the `RHOSTS` parameter needs to be set in order to define the target IP address, while the remaining options are left with their default values.
 
 <p align="center">
-  <img src="Screenshots/10.png" width="800">
+  <img src="Screenshots/10.png" width="1100">
 </p>
 
+The command `set RHOSTS 192.168.1.139` is used to define the target system. The IP address 192.168.1.139 corresponds to the Windows XP host previously identified during network enumeration as vulnerable to `MS08-067`.
 
+<p align="center">
+  <img src="Screenshots/11.png" width="800">
+</p>
 
+Once the `RHOSTS` parameter is configured, the module is executed using the `run` command. This initiates the exploitation process against the specified target system.
 
-
-
-
+<p align="center">
+  <img src="Screenshots/12.png" width="1200">
+</p>
 
 
 
