@@ -6,7 +6,7 @@
 
 ## ℹ️ Information
 
-The Experience machine exposes SMB services running on an unpatched Windows XP system. This configuration is vulnerable to `MS08-067 (CVE-2008-4250)`, a critical remote code execution flaw in the Windows Server service (`NetAPI`).
+The Experience machine exposes SMB services running on an unpatched Windows XP system. This configuration is vulnerable to `MS08-067 (CVE-2008-4250)`, a critical remote code execution flaw in the Windows Server service (NetAPI).
 
 By sending a specially crafted RPC request over SMB port, an unauthenticated attacker can trigger a buffer overflow and execute arbitrary code with SYSTEM-level privileges. Successful exploitation results in full compromise of the target system, impacting confidentiality, integrity, and availability.
 
@@ -73,7 +73,7 @@ The scan included default NSE scripts to gather additional service information a
   <img src="Screenshots/3.png" alt="Ping Result" width="900">
 </div>
 
-The results revealed ports 135 (MSRPC), 139 (NetBIOS), and 445 (SMB) open, indicating a Windows-based host exposing file-sharing services.
+The results revealed ports `135 (MSRPC)`, `139 (NetBIOS)`, and `445 (SMB)` open, indicating a Windows-based host exposing file-sharing services.
 
 Service fingerprinting pointed to Windows XP as the underlying operating system. The SMB configuration showed message signing disabled and failed SMBv2 negotiation, both consistent with an outdated and potentially vulnerable setup.
 
@@ -97,16 +97,16 @@ With the operating system and SMB configuration verified, vulnerability-specific
   <img src="Screenshots/6.png" alt="06" width="700">
 </p>
 
-The scan results indicate that the target is vulnerable to both MS08-067 (CVE-2008-4250) and MS17-010 (CVE-2017-0143), two critical remote code execution vulnerabilities affecting the SMB service.
+The scan results indicate that the target is vulnerable to both `MS08-067 (CVE-2008-4250)` and `MS17-010 (CVE-2017-0143)`, two critical remote code execution vulnerabilities affecting the SMB service.
 
 <p align="center">
   <img src="Screenshots/7.png" width="1000">
 </p>
 
 
-MS08-067 impacts the Windows Server service (NetAPI), allowing unauthenticated attackers to execute arbitrary code via a specially crafted RPC request.
+`MS08-067` impacts the Windows Server service (NetAPI), allowing unauthenticated attackers to execute arbitrary code via a specially crafted RPC request.
 
-MS17-010 targets the SMBv1 protocol and was widely exploited in large-scale attacks such as WannaCry.
+`MS17-010` targets the SMBv1 protocol and was widely exploited in large-scale attacks such as WannaCry.
 
 ---
 
@@ -141,8 +141,22 @@ The command `set RHOSTS 192.168.1.139` is used to define the target system. The 
 Once the `RHOSTS` parameter is configured, the module is executed using the `run` command. This initiates the exploitation process against the specified target system.
 
 <p align="center">
-  <img src="Screenshots/12.png" width="1200">
+  <img src="Screenshots/12..png" width="900">
 </p>
+
+The module executed successfully, resulting in the establishment of a Meterpreter session. Using the `shell` command, an interactive command prompt was obtained on the target system, demonstrating full command execution capabilities.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
