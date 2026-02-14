@@ -158,7 +158,7 @@ Once the `RHOSTS` parameter is configured, the module is executed using the `run
 
 The module executed successfully, resulting in the establishment of a Meterpreter session. Using the `shell` command, an interactive command prompt was obtained on the target system, demonstrating full command execution capabilities.
 
-At this stage, full access to the system has been achieved. Further exploration of the file system can be performed to locate sensitive files, such as user.txt and root.txt, demonstrating the potential impact of a successful compromise.
+At this stage, full access to the system has been achieved. Further exploration of the file system can be performed to locate sensitive files, such as `user.txt` and `root.txt`, demonstrating the potential impact of a successful compromise.
 
 ---
 
